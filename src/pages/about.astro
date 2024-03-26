@@ -1,4 +1,8 @@
 ---
+import '../styles/global.css';
+
+import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro';
 
 const pageTitle = "Sobre mi";
 
@@ -14,6 +18,12 @@ const skills = ["HTML", "CSS", "JavaScript", "Git", "Astro", "Markdown"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "capitalize";
+
+
 ---
 
 <html lang="es">
@@ -23,11 +33,19 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle} >> El blog de Astro y WordPress</title>
+        <style define:vars={{skillColor, fontWeight, textCase}}>
+           
+            .skill {
+              color: var(--skillColor);
+              font-weight: var(--fontWeight);
+              text-transform: var(--textCase);
+            
+                       
+            }
+        </style>
 	</head>
 	<body>
-        <a href="/">Inicio</a>
-        <a href="/about/">Sobre mi</a>
-        <a href="/blog">Blog</a>
+        <Navigation />
 		<h1>{pageTitle}</h1>
 		<h2>El Blog que te enseña sobre cómo conbinar WordPress y Astro</h2>
 		<p>Este blog nace de la oportunidad de hablar sobre cómo combinar WordPress y Astro para hacer sitios webs Headless impresionantes aprovechabdo 
@@ -36,16 +54,16 @@ const goal = 3;
 
 		<p>He aquí algunos datos sobre mí:</p>
   <ul>
-       <li>Me llamo {identity.firstName}.</li>
-       <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+       <li class="skill">Me llamo {identity.firstName}.</li>
+       <li class="skill">Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
        {identity.hobbies.length >= 2 &&
-       <li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+       <li class="skill">Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
        }
   </ul>
        <p>Mis habilidades son:</p>
      
   <ul>
-       {skills.map((skill) => <li>{skill}</li>)}
+       {skills.map((skill) => <li class="skill">{skill}</li>)}
 
     </ul>
 
@@ -55,6 +73,6 @@ const goal = 3;
 
     {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
 
-
+    <Footer />
 	</body>
 </html>

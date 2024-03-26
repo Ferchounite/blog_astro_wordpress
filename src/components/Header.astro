@@ -1,0 +1,31 @@
+---
+import Navigation from './Navigation.astro';
+---
+<header>
+  <p>Logo de Astro</p>
+  <nav>
+    <Navigation />
+  </nav>
+</header>
+
+<style>
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: blueviolet;
+        padding: 15px;
+        color: white;
+    }
+    nav a {
+       
+        color: white;
+        padding-right: 10px;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color:#f7f1f19f
+    }
+</style>
