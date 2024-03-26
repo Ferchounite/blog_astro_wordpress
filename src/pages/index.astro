@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "Blog de Astro y WordPress";
 ---
 
 <html lang="es">
@@ -8,13 +8,13 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>El blog de Astro y WordPress</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<a href="/">Inicio</a>
         <a href="/about/">Sobre mi</a> 
 		<a href="/blog">Blog</a>
-		<h1>Blog de sitios webs con Astro y WordPress</h1>
+		<h1>{pageTitle}</h1>
 		<h2>Aprdende cómo hacer sitios web con WordPress y Astro</h2>
 		<p>Descubriendo el maravilloso mundo de framework Astro para realizar sitios webs headless con WordPress</p>
 	</body>
