@@ -2,7 +2,7 @@
 
 import '../styles/global.css';
 
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "Blog de Astro y WordPress";
@@ -17,10 +17,13 @@ const pageTitle = "Blog de Astro y WordPress";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<Navigation />
+		<Header />
+	  <main>
 		<h1>{pageTitle}</h1>
 		<h2>Aprdende cómo hacer sitios web con WordPress y Astro</h2>
 		<p>Descubriendo el maravilloso mundo de framework Astro para realizar sitios webs headless con WordPress</p>
+	  </main>
 		<Footer />
+	  
 	</body>
 </html>

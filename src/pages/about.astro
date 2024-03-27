@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 
-import Navigation from '../components/Navigation.astro'
+import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "Sobre mi";
@@ -45,7 +45,8 @@ const textCase = "capitalize";
         </style>
 	</head>
 	<body>
-        <Navigation />
+        <Header />
+        <main>
 		<h1>{pageTitle}</h1>
 		<h2>El Blog que te enseña sobre cómo conbinar WordPress y Astro</h2>
 		<p>Este blog nace de la oportunidad de hablar sobre cómo combinar WordPress y Astro para hacer sitios webs Headless impresionantes aprovechabdo 
@@ -72,7 +73,7 @@ const textCase = "capitalize";
     {finished && <p>¡He terminado este tutorial!</p>}
 
     {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
-
+    </main>
     <Footer />
 	</body>
 </html>
